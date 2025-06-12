@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px; 
+}
+.outer-container {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;}
+strong{
+    color: white;
+}
+@keyframes darkFlow {
+  0% { background-position: 0% 100%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 3);
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 900px;
+    height: auto; 
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 30px;
+    width: 60%;
+    max-width: 200px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.parrf {
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.seccion1, .seccion2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.input, select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input:focus, select:focus {
+    border-color: #003ab6; 
+    outline: none;       
+    color: #003ab6;    
+}
+.input::placeholder {
+    color: rgb(211, 211, 218);
+    opacity: 1;
+}
+
+.login-container a {
+    display: block;
+    text-decoration: none;
+    color: rgb(0, 58, 182);
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0 20px;
+    width: 100%;
+}
+
+.check {
+    background-color: rgb(0, 58, 182);
+    color: white;
+    width: 50%;
+    max-width: 300px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.check:active {
+    color: white;
+}
+
+.login-container a:active {
+    color: darkgrey;
+}
+.login-container p a {
+    display: inline;
+    width: auto;
+    margin-left: 5px; 
+}
+p {
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: #555;
+}
+
+.check:active {
+    background: #0050ff;
+    transform: scale(1.04);
+}
+
+.input {
+    transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.register {
+    display: none;
+}
+
+.login-container {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 95vw;
+        padding: 20px 0;
+    }
+    .login-container {
+        width: 90%;
+        max-width: 100%;
+        padding: 0;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .check {
+        width: 80%;
+        max-width: 400px;
+        color: white;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    .parrf {
+        text-align: left;
+        margin-bottom: 3px;
+    }
+    .input, select {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .outer-container {
+        padding: 10px;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 15px 0;
+        border-radius: 5%;
+    }
+    .login-container {
+        width: 95%;
+        padding: 0;
+    }
+    .logo {
+        width: 70%;
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .parrf {
+        font-size: 13px;
+    }
+    .check {
+        width: 90%;
+        color: white;
+    }
+}
