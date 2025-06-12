@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <title>ACME BANK</title>
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <title>RECOVERY</title>
 </head>
 <body>
     <div class="outer-container">
         <div class="container">
             <div class="login-container"> 
                 <img src="assets/img/tex-logo.png" alt="" class="logo">   
-                <h1>Sign in to<br>your account</h1>
+                <h1>Reset your account</h1>
                 <p class="parrf">Enter your email addres and we'll send you  a link to reset your password</p>
+                <select id="identification-r">
+                    <option value="" hidden selected>Type of identification</option>
+                    <option value="Id">Id</option>
+                    <option value="passport">Passport</option>
+                    <option value="tin">Tin</option>
+                    <option value="civil-reg">Civil registry</option>
+                    <option value="diploatic-card">Diploatic card</option>
+                </select>
+                <input type="text" placeholder="Identificaction number" id="username" class="input">
                 <input type="text" placeholder="Email address" id="username" class="input">
                 <br>
                 <button class="sign" id="sign-in"><strong>Send</strong></button>
