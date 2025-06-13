@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>ACME Bank Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    <div class="outer-container">
+    <div class="outer-container fade-in">
         <div class="container">
-            <div class="left-side"> 
+            
+            <div class="overlay" id="overlay"></div>
+            <aside class="left-side">
                 <div class="logo">
-                    <img src="assets/img/tex-logo-white.png" alt="ACME Bank Logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK" />
                 </div>
-                
-                <div class="menu-container">
+                <nav class="menu-container">
                     <div class="menu-item">
                         <img src="assets/img/transactions.png" alt="">Transaction <br> summary
                     </div>
@@ -35,15 +38,106 @@
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
                     </div>
-                    
-                    <div class="menu-item1 logout">
-                        <img src="assets/img/log-out.png" alt="">
+                    <div class="menu-item logout"> <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
                     </div>
-                </div>
-            </div>
-            <div class="right-side"></div>
-        </div>    
-    </div> 
+                </nav>
+            </aside>
+            <main class="right-side">
+                <header class="head">
+                    <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+                    <h2 class="title">Overview</h2>
+                    <img src="assets/img/user.png" alt="Usuario" class="user-icon">
+                </header>
+                <section class="summary-card">
+                    <div class="summary-info">
+                        <h3>Account Summary</h3>
+                        <div class="summary-balance">$12.350.00</div>
+                        <div class="summary-details">
+                            Current Account<br>
+                            1234567390
+                        </div>
+                    </div>
+                    <div class="card-tainer">
+                        <div class="card-container">
+                            <div class="card" id="card1">
+                                <div class="card-face card-front">
+                                    <div class="logo1">ACME BANK</div>
+                                    <div class="chip"></div>
+                                    <div class="card-number">•••• •••• •••• 4567</div>
+                                    <div class="card-holder">JOHN DOE</div>
+                                    <div class="valid-thru">VALID THRU 12/28</div>
+                                </div>
+                                <div class="card-face card-back">
+                                    <div class="magnetic-strip"></div>
+                                    <div class="signature-panel"></div>
+                                    <div class="slogan">Secure Banking</div>
+                                    <div class="contact-info">
+                                        <p>Acme Bank Customer Service</p>
+                                        <p>+1-800-123-4567</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="card-container">
+                            <div class="card" id="card2">
+                                <div class="card-face card-front">
+                                    <div class="logo1">ACME BANK</div>
+                                    <div class="chip"></div>
+                                    <div class="card-number">•••• •••• •••• 8901</div>
+                                    <div class="card-holder">JANE SMITH</div>
+                                    <div class="valid-thru">VALID THRU 09/27</div>
+                                </div>
+                                <div class="card-face card-back">
+                                    <div class="magnetic-strip"></div>
+                                    <div class="signature-panel"></div>
+                                    <div class="slogan">Secure Banking</div>
+                                    <div class="contact-info">
+                                        <p>Acme Bank Customer Service</p>
+                                        <p>+1-800-123-4567</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
+                <section class="transactions">
+                    <h3>Transaction History</h3>
+                    <div class="transactions-list">
+                        <div class="transaction-row">
+                            <span>super</span>
+                            <span>25 mar. 2024</span>
+                            <span>$50.25</span>
+                            <span class="debit">Debit</span>
+                        </div>
+                        <div class="transaction-row">
+                            <span>Deposit</span>
+                            <span>24 mar. 2024</span>
+                            <span class="credit-amount">1.200,00</span>
+                            <span class="credit">Credit</span>
+                        </div>
+                        <div class="transaction-row">
+                            <span>Debit Card pay</span>
+                            <span>23 mar. 2024</span>
+                            <span>$250,00</span>
+                            <span class="debit">Debit</span>
+                        </div>
+                        <div class="transaction-row">
+                            <span>Resturant</span>
+                            <span>21 mar. 2024</span>
+                            <span>$72,50</span>
+                            <span class="debit">Debit</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
 </body>
+
 </html>

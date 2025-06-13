@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -56,7 +58,8 @@ strong{
 }
 
 .logo {
-    margin-bottom: 30px;
+    margin-top: -50px;
+    margin-bottom: 0px;
     width: 60%;
     max-width: 200px;
 }
