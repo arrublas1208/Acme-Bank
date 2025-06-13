@@ -206,6 +206,8 @@ p {
         color: white;
     }
     .logo {
+        height: auto;
+        width: auto;
         margin-bottom: 20px;
     }
     h1 {
@@ -222,34 +224,43 @@ p {
 }
 
 @media (max-width: 600px) {
-    .outer-container {
-        padding: 10px;
-    }
     .container {
         flex-direction: column;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0;
-        border-radius: 5%;
+        max-width: 95vw;
+        min-height: 0;
+        height: auto;
     }
     .login-container {
-        padding: 24px 10px;
-        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 32px 20px;
         display: flex;
         align-items: center;
     }
-    .logo {
-        width: 50%;
-        margin-bottom: 25px;
-    }
-    h1 {
-        font-size: 28px;
-    }
-    .parrf {
-        font-size: 13px;
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
     }
     .check {
-        width: 90%;
+        width: 80%;
+        max-width: 400px;
         color: white;
+    }
+    .logo {
+        height: auto;
+        width: auto;
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    .parrf {
+        text-align: left;
+        margin-bottom: 3px;
+    }
+    .input, select {
+        margin-bottom: 10px;
     }
 }
