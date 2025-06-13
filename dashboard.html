@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACME Bank Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
 </head>
 
 <body>
@@ -14,33 +14,32 @@
         <div class="container">
             
             <div class="overlay" id="overlay"></div>
-            <aside class="left-side">
-                <div class="logo">
-                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK" />
+             <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
                 </div>
                 <nav class="menu-container">
-                    <div class="menu-item">
-                        <img src="assets/img/transactions.png" alt="">Transaction <br> summary
-                    </div>
-                    <div class="menu-item">
-                        <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
-                    </div>
-                    <div class="menu-item">
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
                         <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
-                    </div>
-                    <div class="menu-item">
+                    </a>
+                    <a href="#" class="menu-item">
                         <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
-                    </div>
-                    <div class="menu-item">
+                    </a>
+                    <a href="#" class="menu-item">
                         <img src="assets/img/bank-state.png" alt="">Bank statement
-                    </div>
-                    <div class="menu-item">
+                    </a>
+                    <a href="#" class="menu-item">
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
-                    </div>
-                    <div class="menu-item logout"> <img src="assets/img/log-out.png" alt="">
+                    </a>
+                    <a href="#" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
-                    </div>
+                    </a>
                 </nav>
             </aside>
             <main class="right-side">

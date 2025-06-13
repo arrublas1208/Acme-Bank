@@ -21,6 +21,7 @@ body {
 
 }
 
+
 .outer-container {
   max-height: 100vh;
   background: #f5f6fa;
@@ -96,6 +97,7 @@ body {
   font-size: 1rem;
   color: #fff;
   transition: background 0.2s;
+    text-decoration: none;
 }
 
 .menu-item .material-icons {
