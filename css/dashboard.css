@@ -400,6 +400,152 @@ body {
   margin-bottom: 8px;
 }
 
+
+
+
+
+
+
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.profile-header {
+    margin-bottom: 25px;
+}
+
+.profile-avatar {
+    font-size: 80px;
+    color: #1d2f75;
+    margin-bottom: 15px;
+}
+
+.profile-avatar .fas {
+    font-size: 100px;
+}
+
+.profile-header h3 {
+    font-size: 2.2rem;
+    color: #1d2f75;
+    margin: 10px 0 5px;
+}
+
+.profile-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+.profile-details {
+    text-align: left;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.profile-details span:not(.detail-label) {
+    color: #555;
+    font-size: 1rem;
+}
+
+.balance-amount {
+    font-size: 1.2rem;
+    color: #2ecc71; 
+    font-weight: bold;
+}
+
+.menu-item img[alt="My Profile"] {
+    width: 28px; 
+    height: 28px;
+    object-fit: contain;
+}
+
+@media (max-width: 767px) {
+    .profile-card {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .profile-avatar .fas {
+        font-size: 80px;
+    }
+
+    .profile-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .profile-header p {
+        font-size: 1rem;
+    }
+
+    .detail-label,
+    .profile-details span:not(.detail-label) {
+        font-size: 0.95rem;
+    }
+
+    .balance-amount {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .profile-avatar .fas {
+        font-size: 70px;
+    }
+    .profile-header h3 {
+        font-size: 1.6rem;
+    }
+    .profile-header p {
+        font-size: 0.9rem;
+    }
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1040px) {
   .container {
     flex-direction: column;

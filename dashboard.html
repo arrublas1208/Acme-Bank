@@ -7,21 +7,24 @@
     <title>ACME Bank Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <script type="module" src="js/dashboard.js"></script>
 </head>
 
 <body>
     <div class="outer-container fade-in">
         <div class="container">
-            
+
             <div class="overlay" id="overlay"></div>
-             <aside class="left-side" id="sidebar">
+            <aside class="left-side" id="sidebar">
                 <div class="logo desktop-logo">
                     <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
                 </div>
                 <nav class="menu-container">
-                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png"
+                            alt="">Transaction <br> summary
                     </a>
-                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png"
+                            alt="">Electronic <br> Deposit
                     </a>
                     <a href="withdraw.html" class="menu-item">
                         <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
@@ -36,7 +39,7 @@
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
                     </a>
-                    <a href="#" class="menu-item logout"> 
+                    <a href="index.html" class="menu-item logout">
                         <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
                     </a>
@@ -45,12 +48,22 @@
             <main class="right-side">
                 <header class="head">
                     <button class="hamburger" id="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                     <h2 class="title">Overview</h2>
-                    <img src="assets/img/user.png" alt="Usuario" class="user-icon">
+                    <div class="user-menu-container">
+                        <button class="user-icon" id="user-menu-btn">
+                        </button>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <div class="user-info">
+                                <span class="user-name" id="display-name"></span>
+                                <span class="user-id" id="display-id"></span>
+                                <span class="current-date" id="display-date"></span>
+                            </div>
+                        </div>
+                    </div>
                 </header>
                 <section class="summary-card">
                     <div class="summary-info">
@@ -137,6 +150,7 @@
             </main>
         </div>
     </div>
+
 </body>
 
 </html>

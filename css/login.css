@@ -181,9 +181,34 @@ p {
     object-fit: cover; 
 }
 
+.toast {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    padding: 15px 25px;
+    background-color: #4BB543;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: right 0.5s ease-in-out;
+    font-family: sans-serif;
+}
+
+.toast.show {
+    right: 20px;
+    font-family: sans-serif;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+    font-family: sans-serif;
+}
 
 .login-container {
     animation: fadeInUp 1s ease;
+    font-family: sans-serif;
 }
 @keyframes fadeInUp {
     from {

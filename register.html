@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/register.css">
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <script type="module" src="js/auth-register.js"></script>
     <title>REGISTER</title>
 </head>
+
 <body>
     <div class="outer-container">
         <div class="container">
             <div class="login-container">
-                <img src="assets/img/logo.png" alt="" class="logo">   
+                <img src="assets/img/logo.png" alt="" class="logo">
                 <h1>Register</h1>
                 <p class="parrf">Fill in the required information</p>
-                
+
                 <div class="form-grid">
                     <div class="seccion1">
                         <p class="parrf">Type of identification</p>
@@ -26,16 +29,16 @@
                             <option value="civil-reg">Civil registry</option>
                             <option value="diploatic-card">Diploatic card</option>
                         </select>
-                        
+
                         <p class="parrf">Enter the identification number</p>
                         <input type="text" placeholder="Identification number" id="id-number" class="input">
-                        
+
                         <p class="parrf">Enter your name</p>
                         <input type="text" placeholder="Your name" id="name" class="input">
-                        
+
                         <p class="parrf">Enter your last name</p>
                         <input type="text" placeholder="Your last name" id="last-name" class="input">
-                        
+
                         <p class="parrf">Enter your gender</p>
                         <select id="genre" class="input">
                             <option value="" hidden selected>Gender</option>
@@ -44,17 +47,17 @@
                             <option value="Another"> Another</option>
                         </select>
                     </div>
-                    
+
                     <div class="seccion2">
                         <p class="parrf">Enter your telephone number</p>
                         <input type="tel" placeholder="Telephone number" id="phone-number" class="input">
-                        
+
                         <p class="parrf">Enter email address</p>
                         <input type="email" placeholder="Email address" id="email" class="input">
-                        
+
                         <p class="parrf">Address where you live</p>
                         <input type="text" placeholder="Address" id="address" class="input">
-                        
+
                         <p class="parrf">City where you live</p>
                         <select id="city" class="input">
                             <option value="" hidden selected>City</option>
@@ -68,16 +71,20 @@
                             <option value="Bucaramanga"> Bucaramanga</option>
                             <option value="Villavicencio"> Villavicencio</option>
                         </select>
-                        
+
                         <p class="parrf">contraseña</p>
                         <input type="password" placeholder="Password" id="password" class="input">
                     </div>
                 </div>
-                
-                <button class="check" id="check"><a href="index.html"><strong>Check</strong></a></button>
-                
+
+                <div class="button-group">
+                    <button class="return-btn" id="return"><strong>Return</strong></button>
+                    <button class="check" id="check"><strong>Check</strong></button>
+                </div>
             </div>
         </div>
     </div>
+    <div id="toast" class="toast"></div>
 </body>
+
 </html>
