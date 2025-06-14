@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Bank Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/dash-style.css">
+    <link rel="stylesheet" href="css/bank-statement.css">
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container fade-in">
+            <div class="overlay" id="overlay"></div>
+            
+            <header class="mobile-header">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+                <div class="logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <div style="width: 24px;"></div>
+            </header>
+            
+           <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <nav class="menu-container">
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
+                    </a>
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
+                        <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
+                    </a>
+                    <a href="public-services.html" class="menu-item">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item bank">
+                        <img src="assets/img/bank-state.png" alt="">Bank statement
+                    </a>
+                    <a href="#" class="menu-item">
+                        <img src="assets/img/bank-certificate.png" alt="">
+                        <span>Bank certificate</span>
+                    </a>
+                    <a href="index.html" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+            </aside>
+            
+            <main class="right-side">
+                <div class="main-content">
+                    <div class="header">
+                        <h1>Bank statement</h1>
+                        <div class="user-profile"></div>
+                    </div>
+
+                    <div class="card-container">
+                        <h2>Bank statement Filters</h2>
+                        <div class="transaction-filters">
+                            <div>
+                                <label for="start-date">Start Date:</label>
+                                <input type="date" id="start-date" value="2024-01-01">
+                            </div>
+                            <div>
+                                <label for="end-date">End Date:</label>
+                                <input type="date" id="end-date" value="2024-12-31">
+                            </div>
+                            <button id="apply-filters">Apply Filters</button>
+                        </div>
+
+                        <h2>Transaction report</h2>
+                        <table class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Reference</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transaction-data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
