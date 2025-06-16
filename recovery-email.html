@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <script src="js/recovery-password.js" type="module"></script>
     <title>RECOVERY</title>
 </head>
 <body>
     <div class="outer-container">
         <div class="container">
             <div class="login-container"> 
+                <div id="toast"></div>
                 <img src="assets/img/tex-logo.png" alt="" class="logo">   
                 <h1>Reset your account</h1>
                 <p class="parrf">Enter your email addres and we'll send you  a link to reset your password</p>
@@ -23,7 +25,7 @@
                     <option value="diploatic-card">Diploatic card</option>
                 </select>
                 <input type="text" placeholder="Identificaction number" id="username" class="input">
-                <input type="text" placeholder="Email address" id="username" class="input">
+                <input type="text" placeholder="email number" id="email" class="input">
                 <br>
                 <button class="sign" id="sign-in"><strong>Send</strong></button>
                 <br>

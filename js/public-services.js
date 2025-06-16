@@ -127,7 +127,7 @@ async function handlePaymentSubmission(event) {
   const serviceSelect = document.getElementById("destinationAccount")
   const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text
 
-  const confirmMessage = `¿Confirma el pago de $${amount.toFixed(2)} para ${serviceName}?\nReferencia: ${referenceNumber}`
+  const confirmMessage = `Do you $${amount.toFixed(2)} confirm the payment of ${serviceName}?\nReference: ${referenceNumber}`
   if (!confirm(confirmMessage)) {
     return
   }

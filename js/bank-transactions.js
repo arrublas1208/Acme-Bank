@@ -1,3 +1,24 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCN8zBw644x9hrZngHpNYf01hY2UcENiTE",
+    authDomain: "acme-bank-15f4a.firebaseapp.com",
+    databaseURL: "https://acme-bank-15f4a-default-rtdb.firebaseio.com",
+    projectId: "acme-bank-15f4a",
+    storageBucket: "acme-bank-15f4a.appspot.com",
+    messagingSenderId: "575284743206",
+    appId: "1:575284743206:web:9d38f5c7b7a9112092eae7"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+
+let allTransactions = [];
+let currentUserData = null;
+let currentAccountData = null;
 let filteredTransactions = [];
 
 // Función de impresión

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
     <link rel="stylesheet" href="css/transfer.css">
-    <script src="js/transfer.js"></script>
+    <script src="js/transfer.js" type="module"></script>
 </head>
 <body>
     <div class="outer-container">
@@ -29,11 +29,9 @@
                     <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
                 </div>
                 <nav class="menu-container">
-                    <a href="dashboard.html" class="menu-item"> 
-                        <img src="assets/img/home.png" alt="">Home
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
                     </a>
-                    <a href="transaction-summary.html" class="menu-item"> 
-                        <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
                     </a>
                     <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
                     </a>
@@ -49,11 +47,11 @@
                     <a href="bank-statement.html" class="menu-item">
                         <img src="assets/img/bank-state.png" alt="">Bank statement
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="certificate.html" class="menu-item">
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
                     </a>
-                    <a href="index.html" class="menu-item logout"> 
+                    <a href="#" class="menu-item logout"> 
                         <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
                     </a>
@@ -84,8 +82,6 @@
                                 <label for="sourceAccount">From Account:</label>
                                 <select id="sourceAccount" name="sourceAccount" required>
                                     <option value="">Select source account</option>
-                                    <option value="checking-1234">Checking Account (...1234) - $2,580.43</option>
-                                    <option value="savings-5678">Savings Account (...5678) - $15,750.00</option>
                                 </select>
                             </div>
 

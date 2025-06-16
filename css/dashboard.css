@@ -13,30 +13,30 @@
     animation: fadeInSlideUp 0.8s ease-out both;
 }
 
-
 body {
   margin: 0;
   background: #f5f6fa;
   font-family: sans-serif;
-
 }
 
-
 .outer-container {
-  max-height: 100vh;
+  min-height: 100vh;
   background: #f5f6fa;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 30px 0;
   background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .container {
   display: flex;
   width: 95vw;
   max-width: 1400px;
-  min-height: 93.8vh;
+  min-height: calc(100vh - 60px);
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -69,11 +69,12 @@ body {
 .menu-item img {
   transition: transform 0.3s ease;
   width: 17%;
-
 }
+
 .menu-item img:hover {
   transform: scale(1.15);
 }
+
 .bank-name {
   font-weight: bold;
   font-size: 1.1rem;
@@ -97,7 +98,7 @@ body {
   font-size: 1rem;
   color: #fff;
   transition: background 0.2s;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .menu-item .material-icons {
@@ -119,19 +120,24 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 32px 32px 32px;
   background: #f5f6fa;
   min-width: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
 }
 
 .head {
   display: flex;
   justify-content: flex-start;
-  gap: 16p;
+  gap: 16px;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 0 16px 0;
+  padding: 32px 32px 16px 32px;
   background: transparent;
+  position: sticky;
+  top: 0;
+  background: #f5f6fa;
+  z-index: 100;
 }
 
 .title {
@@ -148,15 +154,21 @@ body {
   object-fit: cover;
 }
 
+.main-content {
+  padding: 0 32px 32px 32px;
+  flex: 1;
+}
+
 .summary-card {
   display: flex;
   align-items: center;
   background: linear-gradient(90deg, #1d2f75 60%, #2A3F8F 100%);
   border-radius: 16px;
-  padding: 28px 32px;
-  margin-bottom: 32px;
+  padding: 38px 32px;
+  margin: 32px;
+  margin-bottom: 10px;
   color: #fff;
-  gap: 32px;
+  gap: 42px;
   min-height: 160px;
   box-shadow: 0 4px 16px rgba(29,47,117,0.08);
 }
@@ -189,8 +201,11 @@ body {
 .transactions {
   background: #fff;
   border-radius: 12px;
-  padding: 24px 24px 8px 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 38px 32px;
+  margin-left: 32px;
+  margin-top: 12px;
+  margin-right: 32px;
 }
 
 .transactions h3 {
@@ -232,6 +247,7 @@ body {
 .debit {
   color: #222;
 }
+
 :root {
     --deep-blue: #2A3F8F;
     --dark-gray: #333333;
@@ -300,7 +316,6 @@ body {
     justify-content: flex-start;
     padding-top: 30px;
 }
-
 
 .logo1 {
     font-weight: bold;
@@ -371,6 +386,7 @@ body {
 .contact-info p {
     margin: 3px 0;
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -384,6 +400,7 @@ body {
   margin: 16px 0 0 16px;
   z-index: 1001;
 }
+
 .hamburger span {
   display: block;
   width: 28px;
@@ -399,12 +416,6 @@ body {
   width: 60%;
   margin-bottom: 8px;
 }
-
-
-
-
-
-
 
 .profile-card {
     background: #fff;
@@ -483,6 +494,49 @@ body {
     object-fit: contain;
 }
 
+/* User menu styles */
+.user-menu-container {
+    position: relative;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px;
+    min-width: 200px;
+    display: none;
+    z-index: 1000;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #1d2f75;
+}
+
+.user-id {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.current-date {
+    color: #888;
+    font-size: 0.85rem;
+}
+
 @media (max-width: 767px) {
     .profile-card {
         padding: 20px;
@@ -532,101 +586,22 @@ body {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1040px) {
+  .outer-container {
+    padding: 0;
+    min-height: 100vh;
+  }
+  
   .container {
     flex-direction: column;
     min-width: 0;
+    width: 100vw;
+    border-radius: 0;
+    min-height: 100vh;
+    max-height: none;
   }
+  
   .left-side {
-    flex-direction: row;
-    width: 100%;
-    min-width: 0;
-    padding: 16px 0;
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-  .menu-container {
-    flex-direction: row;
-    gap: 8px;
-    margin-top: 0;
-  }
-  .menu-item {
-    padding: 8px 12px;
-    font-size: 0.95rem;
-  }
-  .right-side {
-    padding: 16px;
-  }
-  .summary-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-  }
-  .transactions {
-    padding: 12px 8px 4px 8px;
-  }
-  .transaction-row {
-    font-size: 0.95rem;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  }
-  .card-container {
-    width: 320px; 
-    height: 190px; 
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-}
-.card-tainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    perspective: 1000px; 
-    gap: 40px;
-    max-height: 10%;
-}
-.summary-card {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(90deg, #1d2f75 60%, #2A3F8F 100%);
-  border-radius: 16px;
-  padding: 28px 32px;
-  margin-bottom: 32px;
-  color: #fff;
-  gap: 32px;
-  min-height: 160px;
-  box-shadow: 0 4px 16px rgba(29,47,117,0.08);
-}
-.summary-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #e0e6f6;
-  text-align: center;
-}
-.summary-details {
-  font-size: 1rem;
-  color: #c7d0e8;
-  text-align: center;
-}
-.left-side {
     display: none;
     position: fixed;
     top: 0;
@@ -642,238 +617,189 @@ body {
     box-shadow: 2px 0 8px rgba(0,0,0,0.15);
     transform: translateX(-100%);
   }
+  
   .left-side.open {
     display: flex;
     transform: translateX(0);
   }
+  
   .hamburger {
     display: flex;
+    position: fixed;
     top: 16px;
     left: 16px;
     z-index: 1100;
   }
-  .container {
-    padding-left: 0 !important;
+  
+  .right-side {
+    max-height: none;
+    overflow-y: visible;
+    padding: 0;
   }
+  
+  .head {
+    padding: 80px 16px 16px 60px;
+    position: sticky;
+    top: 0;
+    background: #f5f6fa;
+    z-index: 100;
+  }
+  
+  .main-content {
+    padding: 0 16px 32px 16px;
+  }
+  
+  .summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .summary-info h3 {
+    text-align: center;
+  }
+  
+  .summary-details {
+    text-align: center;
+  }
+  
+  .transactions {
+    padding: 16px;
+  }
+  
+  .transaction-row {
+    font-size: 0.95rem;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+  
+  .card-container {
+    width: 320px; 
+    height: 190px;
+  }
+  
+  .card-tainer {
+    gap: 20px;
+    max-height: none;
+  }
+  
   .mobile-logo {
     width: 30%;
     display: inline;
     margin-left: 35vw;
   }
-  
 }
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
     min-width: 0;
+    width: 100vw;
+    border-radius: 0;
+    min-height: 100vh;
   }
-  .left-side {
-    flex-direction: row;
-    width: 100%;
-    min-width: 0;
-    padding: 16px 0;
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-  .menu-container {
-    flex-direction: row;
-    gap: 8px;
-    margin-top: 0;
-  }
-  .menu-item {
-    padding: 8px 12px;
-    font-size: 0.95rem;
-  }
+  
   .right-side {
-    padding: 16px;
+    padding: 0;
+    max-height: none;
+    overflow-y: visible;
   }
+  
+  .head {
+    padding: 80px 16px 16px 60px;
+  }
+  
+  .main-content {
+    padding: 0 16px 32px 16px;
+  }
+  
   .summary-card {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     padding: 20px;
   }
-  .transactions {
-    padding: 12px 8px 4px 8px;
+  
+  .summary-info h3 {
+    text-align: center;
   }
+  
+  .summary-details {
+    text-align: center;
+  }
+  
+  .transactions {
+    padding: 16px;
+  }
+  
   .transaction-row {
     font-size: 0.95rem;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
   }
+  
   .card-container {
-    width: 320px; 
-    height: 190px; 
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-}
-.card-tainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    perspective: 1000px; 
-    gap: 40px;
-    max-height: 10%;
-}
-.summary-card {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(90deg, #1d2f75 60%, #2A3F8F 100%);
-  border-radius: 16px;
-  padding: 28px 32px;
-  margin-bottom: 32px;
-  color: #fff;
-  gap: 32px;
-  min-height: 160px;
-  box-shadow: 0 4px 16px rgba(29,47,117,0.08);
-}
-.summary-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #e0e6f6;
-  text-align: center;
-}
-.summary-details {
-  font-size: 1rem;
-  color: #c7d0e8;
-  text-align: center;
-}
-.left-side {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 220px;
-    background: #1d2f75;
-    z-index: 1000;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-    transition: transform 0.3s ease;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-    transform: translateX(-100%);
-  }
-  .left-side.open {
-    display: flex;
-    transform: translateX(0);
-  }
-  .hamburger {
-    display: flex;
-    top: 16px;
-    left: 16px;
-    z-index: 1100;
-  }
-  .container {
-    padding-left: 0 !important;
-  }
-  .mobile-logo {
-    width: 30%;
-    display: inline;
-    margin-left: 35vw;
+    width: 300px; 
+    height: 180px;
   }
   
+  .card-tainer {
+    gap: 20px;
+    max-height: none;
+  }
 }
-
 
 @media (max-width: 600px) {
   .container {
     width: 100vw;
     border-radius: 0;
     box-shadow: none;
+    min-height: 100vh;
   }
+  
   .right-side {
-    padding: 8px;
+    padding: 0;
+    max-height: none;
+    overflow-y: visible;
   }
+  
+  .head {
+    padding: 80px 8px 16px 50px;
+  }
+  
+  .main-content {
+    padding: 0 8px 32px 8px;
+  }
+  
   .summary-card {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .transactions {
     padding: 12px;
   }
-  .transactions {
-    padding: 12px 8px 4px 8px;
-  }
+  
   .transaction-row {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    padding: 8px 0;
   }
+  
   .card-container {
-    width: 320px; 
-    height: 190px; 
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-}
-.card-tainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    perspective: 1000px; 
-    gap: 40px;
-    max-height: 10%;
-}
-.summary-card {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  background: linear-gradient(90deg, #1d2f75 60%, #2A3F8F 100%);
-  border-radius: 16px;
-  padding: 28px 32px;
-  margin-bottom: 32px;
-  color: #fff;
-  gap: 32px;
-  min-height: 160px;
-  box-shadow: 0 4px 16px rgba(29,47,117,0.08);
-}
-.summary-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #e0e6f6;
-  text-align: center;
-}
-.summary-details {
-  font-size: 1rem;
-  color: #c7d0e8;
-  text-align: center;
-}
-.left-side {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 220px;
-    background: #1d2f75;
-    z-index: 1000;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-    transition: transform 0.3s ease;
-    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-    transform: translateX(-100%);
+    width: 280px; 
+    height: 170px;
   }
-  .left-side.open {
-    display: flex;
-    transform: translateX(0);
+  
+  .card-tainer {
+    gap: 15px;
+    max-height: none;
   }
-  .hamburger {
-    display: flex;
-    top: 16px;
-    left: 16px;
-    z-index: 1100;
+  
+  .title {
+    font-size: 1.5rem;
   }
-  .container {
-    padding-left: 0 !important;
+  
+  .summary-balance {
+    font-size: 2rem;
   }
-  .mobile-logo {
-    width: 30%;
-    display: inline;
-    margin-left: 35vw;
-  }
-
 }
