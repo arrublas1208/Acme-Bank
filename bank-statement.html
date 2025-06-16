@@ -9,6 +9,7 @@
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
     <link rel="stylesheet" href="css/dash-style.css">
     <link rel="stylesheet" href="css/bank-statement.css">
+    <script src="js/bank-transactions.js" type="module"></script>
 </head>
 <body>
     <div class="outer-container">
@@ -58,47 +59,48 @@
                     </a>
                 </nav>
             </aside>
-            
-            <main class="right-side">
-                <div class="main-content">
-                    <div class="header">
-                        <h1>Bank statement</h1>
-                        <div class="user-profile"></div>
-                    </div>
 
+            <main class="right-side">
+                <div class="header">
+                    <h1>Bank Statement</h1>
+                    <div class="user-profile"></div>
+                </div>
+
+                <div class="main-content">
                     <div class="card-container">
-                        <h2>Bank statement Filters</h2>
+                        <h2>Bank Statement Filters</h2>
                         <div class="transaction-filters">
                             <div>
                                 <label for="start-date">Start Date:</label>
-                                <input type="date" id="start-date" value="2024-01-01">
+                                <input type="date" id="start-date">
                             </div>
                             <div>
                                 <label for="end-date">End Date:</label>
-                                <input type="date" id="end-date" value="2024-12-31">
+                                <input type="date" id="end-date">
                             </div>
                             <button id="apply-filters">Apply Filters</button>
                         </div>
 
-                        <h2>Transaction report</h2>
-                        <table class="report-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Description</th>
-                                    <th>Reference</th>
-                                    <th>Type</th>
-                                    <th>Value</th>
-                                </tr>
-                            </thead>
-                            <tbody id="transaction-data">
-                            </tbody>
-                        </table>
+                        <h2>Transaction Report</h2>
+                        <div class="table-responsive">
+                            <table class="report-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Reference</th>
+                                        <th>Type</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transaction-data">
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-
 </body>
 </html>
