@@ -51,7 +51,7 @@ onAuthStateChanged(auth, (user) => {
                 const transactionsContainer = document.querySelector('.transactions-list');
                 transactionsContainer.innerHTML = '';
                 
-                accountData.transactions.forEach(transaction => {
+                Object.values(accountData.transactions).forEach(transaction => {
                     const transactionRow = document.createElement('div');
                     transactionRow.className = 'transaction-row';
                     
