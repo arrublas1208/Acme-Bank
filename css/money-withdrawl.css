@@ -20,6 +20,31 @@
     color: #333;
     font-size: 1rem;
 }
+.user-profile,
+.user-menu-btn,
+.electronic-deposit-initials-btn {
+    background: #1976d2;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    transition: background 0.2s;
+}
+
+.user-profile:hover,
+.user-menu-btn:hover,
+.electronic-deposit-initials-btn:hover {
+    background: #1565c0;
+}
 
 .form-group input[type="number"],
 .form-group input[type="text"],

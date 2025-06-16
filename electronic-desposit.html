@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACME Bank - Electronic Deposit</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/summary.css"> 
-    <link rel="stylesheet" href="css/electronic-deposit.css"> </head>
+    <link rel="stylesheet" href="css/summary.css">
+    <link rel="stylesheet" href="css/electronic-deposit.css">
+    <script type="module" src="js/electronic-deposit.js"></script>
+</head>
+
 <body>
     <div class="outer-container">
         <div class="container fade-in">
             <div class="overlay" id="overlay"></div>
-            
+
             <header class="mobile-header">
                 <div class="hamburger-menu" id="hamburger">
                     <span class="material-icons">menu</span>
@@ -22,7 +26,7 @@
                 </div>
                 <div style="width: 24px;"></div>
             </header>
-            
+
             <aside class="left-side" id="sidebar">
                 <div class="logo desktop-logo">
                     <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
@@ -30,9 +34,14 @@
                 <nav class="menu-container">
                     <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
                     </a>
-                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png"
+                            alt="">Transaction <br> summary
                     </a>
-                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png"
+                            alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
                     </a>
                     <a href="withdraw.html" class="menu-item">
                         <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
@@ -40,25 +49,39 @@
                     <a href="#" class="menu-item">
                         <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="public-services.html" class="menu-item bill">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item">
                         <img src="assets/img/bank-state.png" alt="">Bank statement
                     </a>
                     <a href="#" class="menu-item">
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
+                    </a>pan>Bank certificate</span>
                     </a>
-                    <a href="index.html" class="menu-item logout"> 
+                    <a href="index.html" class="menu-item logout">
                         <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
                     </a>
                 </nav>
             </aside>
-            
+
             <main class="right-side">
                 <div class="main-content">
                     <div class="header">
                         <h1>Electronic Deposit</h1>
-                        <div class="user-profile"></div>
+                        <div class="user-menu-container">
+                            <button class="user-icon" id="user-menu-btn">
+                            </button>
+                            <div class="user-dropdown" id="user-dropdown">
+                                <div class="user-info">
+                                    <span class="user-name" id="display-name"></span>
+                                    <span class="user-id" id="display-id"></span>
+                                    <span class="current-date" id="display-date"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-container deposit-form-container">
@@ -69,13 +92,13 @@
                                 <select id="destinationAccount" name="destinationAccount" required>
                                     <option value="">Select an account</option>
                                     <option value="checking-1234">Checking Account (...1234)</option>
-                                    <option value="savings-5678">Savings Account (...5678)</option>
                                     <option value="creditcard-9012">Credit Card (...9012)</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="depositAmount">Amount to Deposit ($):</label>
-                                <input type="number" id="depositAmount" name="depositAmount" min="0.01" step="0.01" placeholder="e.g., 150.00" required>
+                                <input type="number" id="depositAmount" name="depositAmount" min="0.01" step="0.01"
+                                    placeholder="e.g., 150.00" required>
                             </div>
                             <div class="form-group">
                                 <label for="depositSource">Source of Deposit:</label>
@@ -93,8 +116,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="memo">Memo (Optional):</label>
-                                <textarea id="memo" name="memo" rows="3" placeholder="e.g., Q2 Payroll, Birthday Gift"></textarea>
+                                <textarea id="memo" name="memo" rows="3"
+                                    placeholder="e.g., Q2 Payroll, Birthday Gift"></textarea>
                             </div>
+
                             <button type="submit" class="submit-button">Confirm Deposit</button>
                         </form>
                     </div>
@@ -106,11 +131,14 @@
                             <li>Select the **Destination Account** where you want the funds to be deposited.</li>
                             <li>Enter the exact **Amount to Deposit**.</li>
                             <li>Choose the **Source of Deposit** (e.g., Check, Cash, Transfer).</li>
-                            <li>If depositing a check, you will be prompted to upload clear images of the **front and back** of the check. Endorse the back of the check with "For Mobile Deposit Only ACME Bank" and your signature.</li>
+                            <li>If depositing a check, you will be prompted to upload clear images of the **front and
+                                back** of the check. Endorse the back of the check with "For Mobile Deposit Only ACME
+                                Bank" and your signature.</li>
                             <li>Add an optional **Memo** for your records.</li>
                             <li>Review all details carefully and click **Confirm Deposit**.</li>
                         </ol>
-                        <p class="note">Deposits made after 5:00 PM EST on a business day, or on weekends/holidays, will be processed on the next business day. Funds availability may vary.</p>
+                        <p class="note">Deposits made after 5:00 PM EST on a business day, or on weekends/holidays, will
+                            be processed on the next business day. Funds availability may vary.</p>
                     </div>
 
                 </div>
@@ -118,4 +146,5 @@
         </div>
     </div>
 </body>
+
 </html>

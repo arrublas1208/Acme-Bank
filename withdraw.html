@@ -8,7 +8,9 @@
     
     <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
     <link rel="stylesheet" href="css/summary.css"> 
-    <link rel="stylesheet" href="css/money-withdrawl.css"> </head>
+    <link rel="stylesheet" href="css/money-withdrawl.css"> 
+    <script src="js/withdraw.js" type="module"></script>
+</head>
 <body>
     <div class="outer-container">
         <div class="container fade-in">
@@ -35,20 +37,23 @@
                     </a>
                     <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
                     </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
+                    </a>
                     <a href="withdraw.html" class="menu-item">
                         <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="public-services.html" class="menu-item bill">
                         <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="bank-statement.html" class="menu-item">
                         <img src="assets/img/bank-state.png" alt="">Bank statement
                     </a>
                     <a href="#" class="menu-item">
                         <img src="assets/img/bank-certificate.png" alt="">
                         <span>Bank certificate</span>
                     </a>
-                    <a href="index.html" class="menu-item logout"> 
+                    <a href="#" class="menu-item logout"> 
                         <img src="assets/img/log-out.png" alt="">
                         <span>Log out</span>
                     </a>
@@ -59,7 +64,7 @@
                 <div class="main-content">
                     <div class="header">
                         <h1>Money Withdrawal</h1>
-                        <div class="user-profile"></div>
+                        <button class="user-profile" id="go-to-profile-btn" title="Ver perfil"></button>
                     </div>
 
                     <div class="card-container withdrawal-form-container">
@@ -70,7 +75,6 @@
                                 <select id="sourceAccount" name="sourceAccount" required>
                                     <option value="">Select an account</option>
                                     <option value="checking-1234">Checking Account (...1234)</option>
-                                    <option value="savings-5678">Savings Account (...5678)</option>
                                 </select>
                             </div>
                             <div class="form-group">
