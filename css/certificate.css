@@ -1,0 +1,183 @@
+.bank-certificate {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.menu-item.active{
+    background: #2A3F8F; 
+    font-weight: bold;
+}
+
+.certificate-content {
+  max-width: 100%;
+}
+
+.certificate-content h2 {
+  margin-top: 0;
+  color: #1d2f75;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #1d2f75;
+  padding-bottom: 15px;
+}
+
+.certificate-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #1d2f75, #2a3f8f);
+  color: white;
+  border-radius: 8px;
+}
+
+.certificate-header img {
+  width:20%;
+  height: 20%;
+  margin-bottom: 15px;
+}
+
+.certificate-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.certificate-header h3 {
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.certificate-info {
+  margin: 30px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: bold;
+  color: #1d2f75;
+  min-width: 150px;
+}
+
+.info-value {
+  color: #333;
+  flex: 1;
+  text-align: right;
+}
+
+.certificate-statement {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-style: italic;
+  text-align: center;
+  border-left: 4px solid #1d2f75;
+}
+
+.certificate-footer {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.signature-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.signature {
+  text-align: center;
+  width: 200px;
+}
+
+.signature-line {
+  height: 2px;
+  background: #1d2f75;
+  margin-bottom: 10px;
+}
+
+.certificate-actions {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cert-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.print-btn {
+  background: #28a745;
+  color: white;
+}
+
+.print-btn:hover {
+  background: #218838;
+}
+
+.download-btn {
+  background: #1d2f75;
+  color: white;
+}
+
+.download-btn:hover {
+  background: #2a3f8f;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .info-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .info-value {
+    text-align: left;
+  }
+
+  .certificate-actions {
+    flex-direction: column;
+  }
+
+  .cert-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
