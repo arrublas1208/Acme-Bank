@@ -172,7 +172,7 @@ body {
 .user-profile {
     width: 40px;
     height: 40px;
-    background-color: #dc3545;
+    background-color: #1d2f75;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -247,22 +247,22 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-.transaction-table {
+.report-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
     min-width: 600px; 
 }
 
-.transaction-table th,
-.transaction-table td {
+.report-table th,
+.report-table td {
     padding: 14px 12px; 
     text-align: left;
     border-bottom: 1px solid #eee;
     font-size: 0.9rem;
 }
 
-.transaction-table th {
+.report-table th {
     background-color: #1d2f75;
     color: white;
     position: sticky;
@@ -271,12 +271,12 @@ body {
     white-space: nowrap;
 }
 
-.transaction-table tr:hover {
+.report-table tr:hover {
     background-color: #f9f9f9;
 }
 
 .amount.debit {
-    color: #e74c3c; 
+    color: #1d2f75; 
     font-weight: bold;
 }
 
@@ -395,12 +395,12 @@ body {
         overflow-x: auto;
     }
     
-    .transaction-table {
+    .report-table {
         min-width: 500px;
     }
 
-    .transaction-table th,
-    .transaction-table td {
+    .report-table th,
+    .report-table td {
         padding: 10px 8px;
         font-size: 0.8rem; 
         white-space: nowrap;
@@ -420,5 +420,4 @@ body {
         padding: 15px; 
     }
     
-
 }
