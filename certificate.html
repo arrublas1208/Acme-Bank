@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Certificate - ACME BANK</title>
+    <link rel="stylesheet" href="css/dash-style.css">
+    <link rel="stylesheet" href="css/certificate.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container fade-in">
+            <div class="overlay" id="overlay"></div>
+            
+            <header class="mobile-header">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+                <div class="logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <div style="width: 24px;"></div>
+            </header>
+            
+           <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <nav class="menu-container">
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
+                    </a>
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
+                        <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
+                    </a>
+                    <a href="public-services.html" class="menu-item bill">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item">
+                        <img src="assets/img/bank-state.png" alt="">Bank statement
+                    </a>
+                    <a href="#" class="menu-item">
+                        <img src="assets/img/bank-certificate.png" alt="">
+                        <span>Bank certificate</span>
+                    </a>
+                    <a href="#" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+             </aside>
+             <div class="right-side">
+                <div class="header">
+                    <h1></h1>
+                    <div class="user-profile" id="user-profile">U</div>
+                </div>
+                
+                <div class="main-content">
+                    <!-- Loading State -->
+                    <div id="loading-state" class="card-container" style="text-align: center;">
+                        <h2>Loading Certificate...</h2>
+                        <p>Please wait while we retrieve your information.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: inline-block; width: 20px; height: 20px; border: 3px solid #f3f3f3; border-top: 3px solid #1d2f75; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="error-state" class="card-container" style="display: none; text-align: center; color: #e74c3c;">
+                        <h2>Error Loading Certificate</h2>
+                        <p id="error-message">Unable to load certificate information.</p>
+                        <button onclick="location.reload()" style="padding: 10px 20px; background: #1d2f75; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 10px;">Retry</button>
+                    </div>
+                    
+                    <div id="bank-certificate" class="bank-certificate" style="display: none;">
+                        <!-- el certificado se imprimira aqui-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/certificate.js"></script>
+</body>
+</html>
