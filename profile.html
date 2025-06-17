@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Bank - Mi Perfil</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <script type="module" src="js/dashboard.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="js/profile.js"></script>
+</head>
+
+<body>
+    <div class="outer-container fade-in">
+        <div class="container">
+
+            <div class="overlay" id="overlay"></div>
+            <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <nav class="menu-container">
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
+                    </a>
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
+                        <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
+                    </a>
+                    <a href="public-services.html" class="menu-item bill">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item">
+                        <img src="assets/img/bank-state.png" alt="">Bank statement
+                    </a>
+                    <a href="certificate.html" class="menu-item">
+                        <img src="assets/img/bank-certificate.png" alt="">
+                        <span>Bank certificate</span>
+                    </a>
+                    <a href="#" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+            </aside>
+            <main class="right-side">
+                <header class="head">
+                    <button class="hamburger" id="hamburger-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h2 class="title">My Profile</h2>
+                </header>
+                <section class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="profile-name">John Doe</h3>
+                        <p id="profile-id">ID: 123456789</p>
+                    </div>
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span id="profile-email">john.doe@example.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Account Balance:</span>
+                            <span id="profile-balance" class="balance-amount">$12,350.00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Account Number:</span>
+                            <span id="profile-account-number">1234567390</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

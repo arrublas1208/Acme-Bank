@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Bank - Electronic Deposit</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/dash-style.css">
+    <link rel="stylesheet" href="css/public-services.css">
+    
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container fade-in">
+            <div class="overlay" id="overlay"></div>
+            
+            <header class="mobile-header">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+                <div class="logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <div style="width: 24px;"></div>
+            </header>
+            
+            <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <nav class="menu-container">
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
+                    </a>
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
+                        <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
+                    </a>
+                    <a href="public-services.html" class="menu-item bill">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item">
+                        <img src="assets/img/bank-state.png" alt="">Bank statement
+                    </a>
+                    <a href="certificate.html" class="menu-item">
+                        <img src="assets/img/bank-certificate.png" alt="">
+                        <span>Bank certificate</span>
+                    </a>
+                    <a href="#" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+            </aside>
+            
+             <main class="right-side">
+                <div class="main-content">
+                    <div class="header">
+                        <h1>Utility Bill Payment</h1>
+                        <div class="user-profile"></div>
+                    </div>
+
+                    <div class="card-container deposit-form-container">
+                        <h2>New Utility Bill Payment</h2>
+                        <form id="depositForm" class="deposit-form">
+                            <div class="form-group">
+                                <label for="destinationAccount">Public Services:</label>
+                                <select id="destinationAccount" name="destinationAccount" required>
+                                    <option value="">Select a public service</option>
+                                    <option value="water">Water</option>
+                                    <option value="energy">Energy</option>
+                                    <option value="natural-gas">Natural gas</option>
+                                    <option value="internet">Internet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reference">Reference Number</label>
+                                <input type="number" id="reference" name="reference" min="1" placeholder="e.g., 674536" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="depositAmount">Amount payable ($):</label>
+                                <input type="number" id="depositAmount" name="depositAmount" min="0.01" step="0.01" placeholder="e.g., 150.00" required>
+                            </div>                   
+                            
+                            <button type="submit" class="submit-button">Confirm Deposit</button>
+                        </form>
+                    </div>
+                     <div class="summary-actions">
+                            <button type="button" class="print-button" onclick="printReceipt()">
+                                <span class="material-icons">print</span>
+                                Print Receipt
+                            </button>
+                            <button type="button" class="new-payment-button" onclick="newPayment()">
+                                <span class="material-icons">add</span>
+                                New Payment
+                            </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/public-services.js"></script>
+</body>
+</html>

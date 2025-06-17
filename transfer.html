@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Bank - Money Transfer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="assets/img/icon-bank.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/transfer.css">
+    <script src="js/transfer.js" type="module"></script>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="container fade-in">
+            <div class="overlay" id="overlay"></div>
+            
+            <header class="mobile-header">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+                <div class="logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <div style="width: 24px;"></div>
+            </header>
+            
+            <aside class="left-side" id="sidebar">
+                <div class="logo desktop-logo">
+                    <img src="assets/img/tex-logo-white.png" alt="ACME BANK">
+                </div>
+                <nav class="menu-container">
+                    <a href="dashboard.html" class="menu-item"> <img src="assets/img/home.png" alt="">Home
+                    </a>
+                    <a href="transaction-summary.html" class="menu-item"> <img src="assets/img/transactions.png" alt="">Transaction <br> summary
+                    </a>
+                    <a href="electronic-desposit.html" class="menu-item active"> <img src="assets/img/wallet-pass.png" alt="">Electronic <br> Deposit
+                    </a>
+                    <a href="transfer.html" class="menu-item active">
+                        <img src="assets/img/transfer.png" alt="">Money <br> Transfer
+                    </a>
+                    <a href="withdraw.html" class="menu-item">
+                        <img src="assets/img/withdraw.png" alt="">Money <br> withdrawal
+                    </a>
+                    <a href="public-services.html" class="menu-item bill">
+                        <img src="assets/img/services.png" alt="">Utility Bill <br> Payment
+                    </a>
+                    <a href="bank-statement.html" class="menu-item">
+                        <img src="assets/img/bank-state.png" alt="">Bank statement
+                    </a>
+                    <a href="certificate.html" class="menu-item">
+                        <img src="assets/img/bank-certificate.png" alt="">
+                        <span>Bank certificate</span>
+                    </a>
+                    <a href="#" class="menu-item logout"> 
+                        <img src="assets/img/log-out.png" alt="">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+            </aside>
+            
+            <main class="right-side">
+                <div class="main-content">
+                    <div class="header">
+                        <h1>Money Transfer</h1>
+                       
+                    </div>
+
+                    <div class="card-container">
+                        <h2>Send Money</h2>
+                        <div class="transfer-info">
+                            <h3>Transfer Information</h3>
+                            <ul>
+                                <li>Transfers between ACME Bank accounts are processed instantly</li>
+                                <li>External transfers may take 1-3 business days</li>
+                                <li>Daily transfer limit: $10,000</li>
+                                <li>Please verify recipient account information carefully</li>
+                            </ul>
+                        </div>
+
+                        <form id="transferForm" class="transfer-form">
+                            <div class="form-group">
+                                <label for="sourceAccount">From Account:</label>
+                                <select id="sourceAccount" name="sourceAccount" required>
+                                    <option value="">Select source account</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipientAccountNumber">Destination Account Number:</label>
+                                <input type="text" id="recipientAccountNumber" name="recipientAccountNumber" 
+                                       placeholder="Enter recipient's account number" required />
+                                <small>Enter the complete account number of the recipient</small>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="transferAmount">Amount to Send ($):</label>
+                                    <input type="number" id="transferAmount" name="transferAmount" 
+                                           min="0.01" step="0.01" placeholder="0.00" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="transferType">Transfer Type:</label>
+                                    <select id="transferType" name="transferType" required>
+                                        <option value="">Select transfer type</option>
+                                        <option value="internal">ACME Bank Account</option>
+                                        <option value="external">External Bank Account</option>
+                                        <option value="wire">Wire Transfer</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipientName">Recipient Name:</label>
+                                <input type="text" id="recipientName" name="recipientName" 
+                                       placeholder="Enter recipient's full name" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="transferMemo">Memo (Optional):</label>
+                                <textarea id="transferMemo" name="transferMemo" rows="3" 
+                                          placeholder="Enter a note for this transfer (e.g., Rent payment, Gift, etc.)"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">Send Money</button>
+                        </form>
+
+                        <div class="note">
+                            <strong>Important:</strong> Please review all transfer details carefully before confirming. 
+                            Transfers cannot be cancelled once processed. For questions about transfer limits or fees, 
+                            contact customer service.
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    
+</body>
+</html>
