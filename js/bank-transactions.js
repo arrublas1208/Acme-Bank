@@ -21,7 +21,21 @@ let currentUserData = null;
 let currentAccountData = null;
 let filteredTransactions = [];
 
-// Función de impresión
+function parseDate(dateStr) {
+    if (!dateStr) return null;
+    if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) return new Date(dateStr);
+
+    if (/^\d{2}\/\d{2}\/\d{4}/.test(dateStr)) {
+        const [d, m, y] = dateStr.split('/');
+        return new Date(`${y}-${m}-${d}`);
+    }
+    if (/^\d{2}-\d{2}-\d{4}/.test(dateStr)) {
+        const [m, d, y] = dateStr.split('-');
+        return new Date(`${y}-${m}-${d}`);
+    }
+    return new Date(dateStr);
+}
+
 function printStatement() {
     const startDate = document.getElementById("start-date")?.value || "";
     const endDate = document.getElementById("end-date")?.value || "";
@@ -82,7 +96,6 @@ function printStatement() {
     printWindow.document.close();
 }
 
-// Configuración inicial
 document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.getElementById("hamburger");
     const sidebar = document.getElementById("sidebar");
@@ -99,13 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Fechas por defecto (últimos 30 días)
     const today = new Date();
     const thirtyDaysAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
     document.getElementById("start-date").value = thirtyDaysAgo.toISOString().split("T")[0];
     document.getElementById("end-date").value = today.toISOString().split("T")[0];
 
-    // Agregar botón de imprimir
     const filtersContainer = document.querySelector(".transaction-filters");
     const printBtn = document.createElement("button");
     printBtn.innerHTML = "🖨️ Print";
@@ -114,21 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
     filtersContainer.appendChild(printBtn);
 });
 
-// Filtrar transacciones por fecha
 function filterByDate(startDate, endDate) {
     return allTransactions.filter(tx => {
         if (!tx.date) return true;
-        const txDate = new Date(tx.date);
+        const txDate = parseDate(tx.date);
+        if (isNaN(txDate)) return false;
         const start = startDate ? new Date(startDate) : null;
         const end = endDate ? new Date(endDate) : null;
-        
         if (start && txDate < start) return false;
         if (end && txDate > end) return false;
         return true;
     });
 }
 
-// Mostrar transacciones en tabla
 function showTransactions(transactions) {
     filteredTransactions = transactions;
     const tbody = document.getElementById("transaction-data");
@@ -154,7 +163,6 @@ function showTransactions(transactions) {
     }).join('');
 }
 
-// Aplicar filtros
 function applyFilters() {
     const startDate = document.getElementById("start-date").value;
     const endDate = document.getElementById("end-date").value;
@@ -162,14 +170,12 @@ function applyFilters() {
     showTransactions(filtered);
 }
 
-// Autenticación y carga de datos
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
         window.location.href = "index.html";
         return;
     }
 
-    // Cargar datos del usuario
     try {
         const userSnap = await get(ref(db, 'users/' + user.uid));
         const accountSnap = await get(ref(db, 'accounts/' + user.uid));
@@ -177,7 +183,6 @@ onAuthStateChanged(auth, async (user) => {
         if (userSnap.exists()) currentUserData = userSnap.val();
         if (accountSnap.exists()) currentAccountData = accountSnap.val();
 
-        // Mostrar iniciales en perfil
         const profileDiv = document.querySelector('.user-profile');
         if (profileDiv && currentUserData) {
             const initials = `${currentUserData.name?.charAt(0) || ''}${currentUserData.lastName?.charAt(0) || ''}`.toUpperCase();
@@ -189,18 +194,16 @@ onAuthStateChanged(auth, async (user) => {
         console.error("Error loading user data:", error);
     }
 
-    // Cargar transacciones
     try {
         const txSnap = await get(ref(db, `accounts/${user.uid}/transactions`));
         if (txSnap.exists()) {
             allTransactions = Object.values(txSnap.val());
-            applyFilters(); // Mostrar con filtros por defecto
+            applyFilters(); 
         }
     } catch (error) {
         console.error("Error loading transactions:", error);
     }
 
-    // Event listeners
     document.getElementById('apply-filters')?.addEventListener('click', applyFilters);
     document.querySelectorAll('.logout').forEach(btn => {
         btn.addEventListener('click', async (e) => {
