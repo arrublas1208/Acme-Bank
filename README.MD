@@ -1,75 +1,79 @@
-# Banco Acme - Sistema de Autogestión Bancaria
+# Acme Bank - Self-Management Banking System
 
-![Banco Acme Logo](assets/img/logo.png)
+![Acme Bank Logo](assets/img/logo.png)
 
-**Desarrollado por:** Isabella Carrillo azain, Juan Jose Arrublas Gutierrez
-**Versión:** 1.0.0  
-**Última actualización:** [11/06/2025]
+**Developed by:** Isabella Carrillo Azain, Juan Jose Arrublas Gutierrez  
+**Version:** 0.01 
+**Last Update:** [11/06/2025]
 
-## Tabla de Contenidos
-- [Descripción](#-descripción)
-- [Funcionalidades](#-funcionalidades)
-- [Tecnologías](#-tecnologías)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Instalación](#-instalación)
-- [Uso](#-uso)
-- [Capturas de Pantalla](#-capturas-de-pantalla)
-- [Contribución](#-contribución)
-- [Licencia](#-licencia)
-- [Contacto](#-contacto)
+## Table of Contents
+- [Description](#-description)
+- [Features](#-features)
+- [Technologies](#-technologies)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Screenshots](#-screenshots)
+- [Contribution](#-contribution)
+- [License](#-license)
+- [Contact](#-contact)
 
-## 📝 Descripción
+## 📝 Description
 
-Aplicación web para la autogestión de cuentas bancarias del Banco Acme que permite a los usuarios:
+A web application for self-management of Acme Bank accounts, allowing users to:
 
-- Acceder a su cuenta mediante autenticación segura
-- Realizar operaciones bancarias básicas
-- Consultar movimientos y generar reportes
-- Administrar su perfil y seguridad
+- Access their accounts through secure authentication
+- Perform basic banking operations
+- Check transactions and generate reports
+- Manage profile and security settings
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-### Autenticación
-- ✅ Inicio de sesión con validación en tiempo real
-- ✅ Registro de nuevos clientes
-- ✅ Recuperación de contraseña
-- ✅ Cierre de sesión seguro
+### Authentication
+- ✅ Real-time login validation
+- ✅ New customer registration
+- ✅ Password recovery
+- ✅ Secure logout
 
-### Operaciones Bancarias
-- 💰 Consignaciones electrónicas
-- 🏧 Retiros de dinero
-- 💡 Pago de servicios públicos
-- 📊 Consulta de saldo
+### Banking Operations
+- 💰 Electronic deposits
+- 🏧 Cash withdrawals
+- 💡 Utility bill payments
+- 📊 Balance inquiry
 
-### Reportes
-- 📑 Extracto bancario mensual
-- 🏦 Certificado bancario digital
-- 🖨️ Funcionalidad de impresión
+### Reports
+- 📑 Monthly bank statement
+- 🏦 Digital banking certificate
+- 🖨️ Print functionality
 
-### Seguridad
-- 🔒 Persistencia de datos encriptados
-- 🛡️ Validación de formularios
-- 📱 Diseño responsive para todos los dispositivos
+### Security
+- 🔒 Encrypted data persistence
+- 🛡️ Form validation
+- 📱 Responsive design for all devices
 
-## 💻 Tecnologías
+## 💻 Technologies
 
 **Frontend:**
-- HTML5 semántico
-- CSS3 con Flexbox y Grid
+- Semantic HTML5
+- CSS3 with Flexbox and Grid
 - JavaScript 
-- LocalStorage para persistencia
+- LocalStorage for data persistence
 - Google Firebase
 
-**Herramientas:**
-- Git para control de versiones
-- GitHub para colaboración
-- Google Fonts para tipografía
-- Font Awesome para iconos
-- Google Firebase para Base datos dinamica
+**Tools:**
+- Git for version control
+- GitHub for collaboration
+- Google Fonts for typography
+- Font Awesome for icons
+- Google Firebase for dynamic database
 
-## 🚀 Instalación
+## 🚀 Installation
 
-1. Clonar el repositorio:
+1. Clone the repository:
 ```bash
 git clone https://github.com/arrublas1208/.git
 cd banco-acme
+
+
+🧾 FIGMA
+https://www.figma.com/design/KsoF8cu6JxSO691ia9FPwy/Untitled?node-id=0-1&t=byAFvzjr1uqfVMPf-1

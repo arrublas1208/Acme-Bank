@@ -244,8 +244,16 @@ body {
   font-weight: 600;
 }
 
+/* Updated debit styles to show in red */
 .debit {
-  color: #222;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Style for debit amounts - you can add this class to debit amount spans */
+.debit-amount {
+  color: #e74c3c;
+  font-weight: 600;
 }
 
 :root {
@@ -254,6 +262,7 @@ body {
     --white: #FFFFFF;
     --light-gray: #F5F5F5;
     --emerald-green: #2E8B57;
+    --debit-red: #e74c3c;
 }
 
 .card-tainer {

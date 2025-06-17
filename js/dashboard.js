@@ -58,7 +58,7 @@ onAuthStateChanged(auth, (user) => {
                     transactionRow.innerHTML = `
                         <span>${transaction.description}</span>
                         <span>${transaction.date}</span>
-                        <span class="${transaction.type.toLowerCase() === 'credit' ? 'credit-amount' : ''}">
+                        <span class="${transaction.type.toLowerCase() === 'credit' ? 'credit-amount' : 'debit-amount'}">
                             $${transaction.amount}
                         </span>
                         <span class="${transaction.type.toLowerCase()}">${transaction.type}</span>
