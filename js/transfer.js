@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+import { getDatabase, ref, onValue, update, get, child } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCN8zBw644x9hrZngHpNYf01hY2UcENiTE",
@@ -156,13 +156,42 @@ async function processTransfer(transferData) {
             status: 'Completed'
         };
         let updates = {};
-        if (currentAccountData && typeof currentAccountData === "object" && !Array.isArray(currentAccountData) && currentAccountData[sourceAccount]) {
-            updates[`accounts/${currentUser.uid}/${sourceAccount}/balance`] = newBalance.toFixed(2);
-            updates[`accounts/${currentUser.uid}/${sourceAccount}/transactions/${transactionId}`] = transactionData;
-        } else {
-            updates[`accounts/${currentUser.uid}/balance`] = newBalance.toFixed(2);
-            updates[`accounts/${currentUser.uid}/transactions/${transactionId}`] = transactionData;
+        updates[`accounts/${currentUser.uid}/balance`] = newBalance.toFixed(2);
+        updates[`accounts/${currentUser.uid}/transactions/${transactionId}`] = transactionData;
+
+        const dbRef = ref(database);
+        const accountsSnapshot = await get(child(dbRef, 'accounts'));
+        let recipientUid = null;
+        let recipientCurrentBalance = null;
+        if (accountsSnapshot.exists()) {
+            const accountsData = accountsSnapshot.val();
+            for (const [uid, acc] of Object.entries(accountsData)) {
+                if (acc && acc.accountNumber && String(acc.accountNumber) === String(recipientAccount)) {
+                    recipientUid = uid;
+                    recipientCurrentBalance = parseFloat(acc.balance) || 0;
+                    break;
+                }
+            }
         }
+        if (!recipientUid) throw new Error('Recipient account not found');
+
+        const recipientNewBalance = recipientCurrentBalance + transferAmount;
+        const recipientTransactionId = generateTransactionId();
+        const recipientTransactionData = {
+            id: recipientTransactionId,
+            type: 'Credit',
+            description: `Transfer from ${currentUserData?.fullName || currentUserData?.name || 'Unknown'} (${sourceOption.dataset.accountNumber})`,
+            amount: transferAmount.toFixed(2),
+            date: transactionDate,
+            memo: memo || '',
+            sender: currentUserData?.fullName || currentUserData?.name || 'Unknown',
+            senderAccount: sourceOption.dataset.accountNumber,
+            transferType: transferType,
+            status: 'Completed'
+        };
+        updates[`accounts/${recipientUid}/balance`] = recipientNewBalance.toFixed(2);
+        updates[`accounts/${recipientUid}/transactions/${recipientTransactionId}`] = recipientTransactionData;
+
         await update(ref(database), updates);
         return {
             success: true,
